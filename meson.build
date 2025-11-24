@@ -1,4 +1,5 @@
 project('rawr', 'c', meson_version: '>=1.1', version: '0.0.0')
+add_project_arguments('-DVERSION="'+meson.project_version()+'"', language : 'c')
 
 sources = [
   'rawr/main.c',
@@ -16,4 +17,6 @@ rawr = executable('rawr',
   dependencies: [m_dep, rlc_dep, rlso_dep, rlarg_dep],
   install: true,
   )
+
+install_data('bash/rawr', install_dir: get_option('completion_dir'))
 

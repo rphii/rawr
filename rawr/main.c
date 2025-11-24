@@ -144,7 +144,12 @@ int main(int argc, const char **argv) {
 
     struct ArgXGroup *g = argx_group(arg, so("Core"), false), *h;
     struct ArgX *x;
+    h = argx_group(arg, so("Utils"), true);
+    argx_builtin_env_compgen(h);
     argx_builtin_opt_help(g);
+#if defined(VERSION)
+    argx_builtin_opt_version(g, so(VERSION));
+#endif
     /* mode selection */
     x=argx_pos(arg, so("mode"), so("encode/decode"));
       h=argx_opt(x, (int *)&mode, 0);
