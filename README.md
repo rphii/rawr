@@ -56,4 +56,5 @@ rawr decode out2.png -o concatenated.txt
 
 - stream through pipes and redirect
 - make output optionally verbose (not as it is now, always showing)
+- respect endianness
 
