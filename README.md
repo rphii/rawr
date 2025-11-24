@@ -46,10 +46,10 @@ Single file:
 rawr decode out.png -o file.txt
 ```
 
-Originally two files, now written into one file:
+Originally three files, now written into one file:
 
 ```
-rawr decode out2.png -o concatenated.txt
+rawr decode out.png out2.png -o concatenated.txt
 ```
 
 ## SOON™
